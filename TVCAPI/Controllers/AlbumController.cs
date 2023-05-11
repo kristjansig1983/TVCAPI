@@ -1,42 +1,61 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Reflection.Metadata.Ecma335;
+using TVCAPI.Data;
+using TVCAPI.Interfaces;
 using TVCAPI.Models;
 using static System.Net.WebRequestMethods;
 
 namespace TVCAPI.Controllers
 {
-    [Route("api/albums")]
+    [Route("api/")]
     [ApiController]
     public class AlbumController : ControllerBase
     {
+
+        private ITVCRepository _repo;
+
+
+        public AlbumController()
+        {
+            _repo = new MockRepository();
+        }
         [HttpGet]
+        [Route("albums")]
         public List<Album> GetAllAlbums()
         {
-            return new List<Album>()
-            {
-            new Album() { AlbumID = 1, AlbumName = "The Vintage Caravan", AlbumYear = 2009, AlbumCoverUrl = "https://www.spirit-of-metal.com/les%20goupes/T/The%20Vintage%20Caravan/The%20Vintage%20Caravan/The%20Vintage%20Caravan.jpg"},
-            };
+           
+           return _repo.GetAllAlbums();
         }
 
         [HttpGet]
-        [Route("{id}")]
+        [Route("albums/{id}")]
         public ActionResult<Album> GetALbumById(int id)
         {
-            List<Album> albums = new List<Album>()
-            {
-            new Album() { AlbumID = 1, AlbumName = "The Vintage Caravan", AlbumYear = 2009, AlbumCoverUrl = "https://www.spirit-of-metal.com/les%20goupes/T/The%20Vintage%20Caravan/The%20Vintage%20Caravan/The%20Vintage%20Caravan.jpg"},
-            };
+            
 
-            foreach (Album album in albums)
+            Album? album = _repo.GetALbumById(id);
+
+            if (album == null)
             {
-                if (album.AlbumID == id)
-                {
-                    return album;
-                }
+                return NotFound();
+
             }
 
-            return NotFound();
+            return album;
+
+            
         }
+
+        [HttpGet]
+        [Route("songs")]
+        public List<Song> GetAllSongs()
+        {
+
+            return _repo.GetAllSongs();
+        }
+
+
     }
 
 }
