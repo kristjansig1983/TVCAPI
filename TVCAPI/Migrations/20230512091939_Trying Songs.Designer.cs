@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TVCAPI.Data;
 
@@ -10,9 +11,11 @@ using TVCAPI.Data;
 namespace TVCAPI.Migrations
 {
     [DbContext(typeof(TVCDBContext))]
-    partial class TVCDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230512091939_Trying Songs")]
+    partial class TryingSongs
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

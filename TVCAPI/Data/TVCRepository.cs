@@ -28,7 +28,19 @@ namespace TVCAPI.Data
 
         public List<Song> GetAllSongs()
         {
-            throw new NotImplementedException();
+            return _dbContext.Songs.ToList();
+        }
+
+        public List<Merch> GetAllMerch()
+        {
+            return _dbContext.Merches.ToList();
+
+        }
+
+        public void CreateAlbum(Album album)
+        {
+            _dbContext.Albums.Add(album);
+            _dbContext.SaveChanges();
         }
     }
 }

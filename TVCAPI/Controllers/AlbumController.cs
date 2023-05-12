@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection.Metadata.Ecma335;
 using TVCAPI.Data;
 using TVCAPI.Interfaces;
@@ -16,9 +17,9 @@ namespace TVCAPI.Controllers
         private ITVCRepository _repo;
 
 
-        public AlbumController()
+        public AlbumController(ITVCRepository repo)
         {
-            _repo = new MockRepository();
+            _repo = repo;
         }
         [HttpGet]
         [Route("albums")]
@@ -45,6 +46,19 @@ namespace TVCAPI.Controllers
             return album;
 
             
+        }
+
+        [HttpPost]
+        [Route("albums")]
+        public ActionResult<Album> CreateAlbum(Album album)
+        {
+
+            _repo.CreateAlbum(album);
+            
+             
+
+            //return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
+            return CreatedAtAction(nameof(GetALbumById), new { id = album.AlbumId }, album);
         }
 
         [HttpGet]

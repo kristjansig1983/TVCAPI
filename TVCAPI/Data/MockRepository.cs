@@ -46,5 +46,15 @@ namespace TVCAPI.Data
             }
             return null;
         }
+
+        public List<Merch> GetAllMerch()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CreateAlbum(Album album)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
