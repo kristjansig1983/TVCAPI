@@ -33,7 +33,7 @@ namespace TVCAPI.Data
 
         }
 
-        public Album? GetALbumById(int id)
+        public Album? GetAlbumById(int id)
         {
 
 
@@ -53,6 +53,31 @@ namespace TVCAPI.Data
         }
 
         public void CreateAlbum(Album album)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Merch? GetMerchById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CreateMerch(Merch merch)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Album? GetALbumById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Album? UpdateAlbum(int id, Album albumFromBody)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteAlbum(Album album)
         {
             throw new NotImplementedException();
         }
