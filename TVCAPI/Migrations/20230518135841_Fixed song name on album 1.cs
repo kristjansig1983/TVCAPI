@@ -5,24 +5,28 @@
 namespace TVCAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class TryingSongs : Migration
+    public partial class Fixedsongnameonalbum1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.InsertData(
+            migrationBuilder.UpdateData(
                 table: "Songs",
-                columns: new[] { "SongId", "AlbumId", "SongName" },
-                values: new object[] { 1, 1, "Need a Woman" });
+                keyColumn: "SongId",
+                keyValue: 7,
+                column: "SongName",
+                value: "Let's Get It on");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DeleteData(
+            migrationBuilder.UpdateData(
                 table: "Songs",
                 keyColumn: "SongId",
-                keyValue: 1);
+                keyValue: 7,
+                column: "SongName",
+                value: "Empty Space");
         }
     }
 }

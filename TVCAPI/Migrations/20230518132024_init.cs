@@ -2,10 +2,12 @@
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace TVCAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -59,6 +61,28 @@ namespace TVCAPI.Migrations
                         principalColumn: "AlbumId",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Albums",
+                columns: new[] { "AlbumId", "AlbumCoverUrl", "AlbumName", "AlbumYear" },
+                values: new object[,]
+                {
+                    { 1, "https://www.spirit-of-metal.com/les%20goupes/T/The%20Vintage%20Caravan/The%20Vintage%20Caravan/The%20Vintage%20Caravan.jpg", "The Vintage Caravan", 2009 },
+                    { 2, "https://www.spirit-of-metal.com/les%20goupes/T/The%20Vintage%20Caravan/Voyage/Voyage.jpg", "Voyage", 2012 },
+                    { 3, "https://www.spirit-of-metal.com/les%20goupes/T/The%20Vintage%20Caravan/Arrival/Arrival.jpg", "Arrival", 2015 },
+                    { 4, "https://www.spirit-of-metal.com/les%20goupes/T/The%20Vintage%20Caravan/Gateways/Gateways_5124.jpg", "Gateways", 2018 },
+                    { 5, "https://www.spirit-of-metal.com/les%20goupes/T/The%20Vintage%20Caravan/Gateways/Gateways_5124.jpg", "Monuments", 2021 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Merches",
+                columns: new[] { "MerchId", "MerchImgUrl", "MerchName", "MerchPrice" },
+                values: new object[] { 1, "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/T-SHIRT-TVC-Monuments-BLACK_600x.jpg?v=1621621536\r\n", "Monuments Cover Long sleeve", 3500 });
+
+            migrationBuilder.InsertData(
+                table: "Songs",
+                columns: new[] { "SongId", "AlbumId", "SongName" },
+                values: new object[] { 1, 1, "Need a Woman" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Songs_AlbumId",

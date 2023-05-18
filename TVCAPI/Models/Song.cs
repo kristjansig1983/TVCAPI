@@ -3,11 +3,7 @@
     public class Song
     {
 
-        public Song()
-        {
-
-            
-        }
+        
 
 
         public int SongId { get; set; }

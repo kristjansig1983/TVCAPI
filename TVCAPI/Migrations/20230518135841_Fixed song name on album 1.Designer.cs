@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TVCAPI.Data;
 
@@ -10,9 +11,11 @@ using TVCAPI.Data;
 namespace TVCAPI.Migrations
 {
     [DbContext(typeof(TVCDBContext))]
-    partial class TVCDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230518135841_Fixed song name on album 1")]
+    partial class Fixedsongnameonalbum1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -110,51 +113,9 @@ namespace TVCAPI.Migrations
                         new
                         {
                             MerchId = 1,
-                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/T-SHIRT-TVC-Monuments-BLACK_600x.jpg?v=1621621536",
+                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/T-SHIRT-TVC-Monuments-BLACK_600x.jpg?v=1621621536\r\n",
                             MerchName = "Monuments Cover Long sleeve",
                             MerchPrice = 3500
-                        },
-                        new
-                        {
-                            MerchId = 2,
-                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/Monolithbaseball_700x.jpg?v=1621620613",
-                            MerchName = "Monoliths T-shirt",
-                            MerchPrice = 3500
-                        },
-                        new
-                        {
-                            MerchId = 3,
-                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/tanktop_700x.jpg?v=1621620627",
-                            MerchName = "Tank Top",
-                            MerchPrice = 3000
-                        },
-                        new
-                        {
-                            MerchId = 4,
-                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/files/Longsleeve-The-Vintage-Caravan-Blizzard_700x.jpg?v=1682686660",
-                            MerchName = "Blizzard Long sleeve",
-                            MerchPrice = 3500
-                        },
-                        new
-                        {
-                            MerchId = 5,
-                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/t-shirt-gateways_700x.jpg?v=1621620596",
-                            MerchName = "Gateways T-shirt",
-                            MerchPrice = 3500
-                        },
-                        new
-                        {
-                            MerchId = 6,
-                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/Hidden-Streams_700x.jpg?v=1621620620",
-                            MerchName = "Hidden Streams T-shirt",
-                            MerchPrice = 3500
-                        },
-                        new
-                        {
-                            MerchId = 7,
-                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/1COASTER-TVC-Logo_700x.jpg?v=1621621585",
-                            MerchName = "Coaster",
-                            MerchPrice = 500
                         });
                 });
 

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TVCAPI.Data;
 
@@ -10,9 +11,11 @@ using TVCAPI.Data;
 namespace TVCAPI.Migrations
 {
     [DbContext(typeof(TVCDBContext))]
-    partial class TVCDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230518134451_Added all songs for album 3")]
+    partial class Addedallsongsforalbum3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -110,51 +113,9 @@ namespace TVCAPI.Migrations
                         new
                         {
                             MerchId = 1,
-                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/T-SHIRT-TVC-Monuments-BLACK_600x.jpg?v=1621621536",
+                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/T-SHIRT-TVC-Monuments-BLACK_600x.jpg?v=1621621536\r\n",
                             MerchName = "Monuments Cover Long sleeve",
                             MerchPrice = 3500
-                        },
-                        new
-                        {
-                            MerchId = 2,
-                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/Monolithbaseball_700x.jpg?v=1621620613",
-                            MerchName = "Monoliths T-shirt",
-                            MerchPrice = 3500
-                        },
-                        new
-                        {
-                            MerchId = 3,
-                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/tanktop_700x.jpg?v=1621620627",
-                            MerchName = "Tank Top",
-                            MerchPrice = 3000
-                        },
-                        new
-                        {
-                            MerchId = 4,
-                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/files/Longsleeve-The-Vintage-Caravan-Blizzard_700x.jpg?v=1682686660",
-                            MerchName = "Blizzard Long sleeve",
-                            MerchPrice = 3500
-                        },
-                        new
-                        {
-                            MerchId = 5,
-                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/t-shirt-gateways_700x.jpg?v=1621620596",
-                            MerchName = "Gateways T-shirt",
-                            MerchPrice = 3500
-                        },
-                        new
-                        {
-                            MerchId = 6,
-                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/Hidden-Streams_700x.jpg?v=1621620620",
-                            MerchName = "Hidden Streams T-shirt",
-                            MerchPrice = 3500
-                        },
-                        new
-                        {
-                            MerchId = 7,
-                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/1COASTER-TVC-Logo_700x.jpg?v=1621621585",
-                            MerchName = "Coaster",
-                            MerchPrice = 500
                         });
                 });
 
@@ -220,7 +181,7 @@ namespace TVCAPI.Migrations
                         {
                             SongId = 7,
                             AlbumId = 1,
-                            SongName = "Let's Get It on"
+                            SongName = "Empty Space"
                         },
                         new
                         {
@@ -359,138 +320,6 @@ namespace TVCAPI.Migrations
                             SongId = 30,
                             AlbumId = 3,
                             SongName = "Five Months"
-                        },
-                        new
-                        {
-                            SongId = 31,
-                            AlbumId = 4,
-                            SongName = "Set Your Sights"
-                        },
-                        new
-                        {
-                            SongId = 32,
-                            AlbumId = 4,
-                            SongName = "The Way"
-                        },
-                        new
-                        {
-                            SongId = 33,
-                            AlbumId = 4,
-                            SongName = "Reflections"
-                        },
-                        new
-                        {
-                            SongId = 34,
-                            AlbumId = 4,
-                            SongName = "On the Run"
-                        },
-                        new
-                        {
-                            SongId = 35,
-                            AlbumId = 4,
-                            SongName = "All This Time"
-                        },
-                        new
-                        {
-                            SongId = 36,
-                            AlbumId = 4,
-                            SongName = "Hidden Streams"
-                        },
-                        new
-                        {
-                            SongId = 37,
-                            AlbumId = 4,
-                            SongName = "Reset"
-                        },
-                        new
-                        {
-                            SongId = 38,
-                            AlbumId = 4,
-                            SongName = "Nebula"
-                        },
-                        new
-                        {
-                            SongId = 39,
-                            AlbumId = 4,
-                            SongName = "Farewell"
-                        },
-                        new
-                        {
-                            SongId = 40,
-                            AlbumId = 4,
-                            SongName = "Tune out"
-                        },
-                        new
-                        {
-                            SongId = 41,
-                            AlbumId = 4,
-                            SongName = "The Chain (Fleetwood Mac Cover)"
-                        },
-                        new
-                        {
-                            SongId = 42,
-                            AlbumId = 5,
-                            SongName = "Whispers"
-                        },
-                        new
-                        {
-                            SongId = 43,
-                            AlbumId = 5,
-                            SongName = "Crystallized"
-                        },
-                        new
-                        {
-                            SongId = 44,
-                            AlbumId = 5,
-                            SongName = "Can’t get you off my mind"
-                        },
-                        new
-                        {
-                            SongId = 45,
-                            AlbumId = 5,
-                            SongName = "Dark times"
-                        },
-                        new
-                        {
-                            SongId = 46,
-                            AlbumId = 5,
-                            SongName = "This one’s for you"
-                        },
-                        new
-                        {
-                            SongId = 47,
-                            AlbumId = 5,
-                            SongName = "Forgotten"
-                        },
-                        new
-                        {
-                            SongId = 48,
-                            AlbumId = 5,
-                            SongName = "Sharp teeth"
-                        },
-                        new
-                        {
-                            SongId = 49,
-                            AlbumId = 5,
-                            SongName = "Hell"
-                        },
-                        new
-                        {
-                            SongId = 50,
-                            AlbumId = 5,
-                            SongName = "Torn in two"
-                        },
-                        new
-                        {
-                            SongId = 51,
-                            AlbumId = 5,
-                            SongName = "Said&Done"
-                        },
-                        new
-                        {
-                            SongId = 52,
-                            AlbumId = 5,
-                            SongName = "Clarity"
                         });
                 });
 

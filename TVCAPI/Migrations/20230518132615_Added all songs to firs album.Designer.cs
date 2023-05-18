@@ -11,8 +11,8 @@ using TVCAPI.Data;
 namespace TVCAPI.Migrations
 {
     [DbContext(typeof(TVCDBContext))]
-    [Migration("20230512090343_Trying Merch")]
-    partial class TryingMerch
+    [Migration("20230518132615_Added all songs to firs album")]
+    partial class Addedallsongstofirsalbum
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,6 +55,34 @@ namespace TVCAPI.Migrations
                             AlbumCoverUrl = "https://www.spirit-of-metal.com/les%20goupes/T/The%20Vintage%20Caravan/The%20Vintage%20Caravan/The%20Vintage%20Caravan.jpg",
                             AlbumName = "The Vintage Caravan",
                             AlbumYear = 2009
+                        },
+                        new
+                        {
+                            AlbumId = 2,
+                            AlbumCoverUrl = "https://www.spirit-of-metal.com/les%20goupes/T/The%20Vintage%20Caravan/Voyage/Voyage.jpg",
+                            AlbumName = "Voyage",
+                            AlbumYear = 2012
+                        },
+                        new
+                        {
+                            AlbumId = 3,
+                            AlbumCoverUrl = "https://www.spirit-of-metal.com/les%20goupes/T/The%20Vintage%20Caravan/Arrival/Arrival.jpg",
+                            AlbumName = "Arrival",
+                            AlbumYear = 2015
+                        },
+                        new
+                        {
+                            AlbumId = 4,
+                            AlbumCoverUrl = "https://www.spirit-of-metal.com/les%20goupes/T/The%20Vintage%20Caravan/Gateways/Gateways_5124.jpg",
+                            AlbumName = "Gateways",
+                            AlbumYear = 2018
+                        },
+                        new
+                        {
+                            AlbumId = 5,
+                            AlbumCoverUrl = "https://www.spirit-of-metal.com/les%20goupes/T/The%20Vintage%20Caravan/Gateways/Gateways_5124.jpg",
+                            AlbumName = "Monuments",
+                            AlbumYear = 2021
                         });
                 });
 
@@ -111,6 +139,62 @@ namespace TVCAPI.Migrations
                     b.HasIndex("AlbumId");
 
                     b.ToTable("Songs");
+
+                    b.HasData(
+                        new
+                        {
+                            SongId = 1,
+                            AlbumId = 1,
+                            SongName = "Need a Woman"
+                        },
+                        new
+                        {
+                            SongId = 2,
+                            AlbumId = 1,
+                            SongName = "Corruption and Fraud"
+                        },
+                        new
+                        {
+                            SongId = 3,
+                            AlbumId = 1,
+                            SongName = "Sun-ray"
+                        },
+                        new
+                        {
+                            SongId = 4,
+                            AlbumId = 1,
+                            SongName = "Psychedelic Mushroom Man"
+                        },
+                        new
+                        {
+                            SongId = 5,
+                            AlbumId = 1,
+                            SongName = "Wild Child"
+                        },
+                        new
+                        {
+                            SongId = 6,
+                            AlbumId = 1,
+                            SongName = "Empty Space"
+                        },
+                        new
+                        {
+                            SongId = 7,
+                            AlbumId = 1,
+                            SongName = "Empty Space"
+                        },
+                        new
+                        {
+                            SongId = 8,
+                            AlbumId = 1,
+                            SongName = "Going Home"
+                        },
+                        new
+                        {
+                            SongId = 9,
+                            AlbumId = 1,
+                            SongName = "Black Swan"
+                        });
                 });
 
             modelBuilder.Entity("TVCAPI.Models.Song", b =>

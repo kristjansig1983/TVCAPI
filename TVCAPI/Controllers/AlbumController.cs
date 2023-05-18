@@ -141,7 +141,7 @@ namespace TVCAPI.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
 
-            return NoContent();
+            
         }
 
         [HttpGet]
