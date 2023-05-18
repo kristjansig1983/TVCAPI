@@ -13,7 +13,7 @@ namespace TVCAPI.Models
         [MaxLength(255)]
         public string AlbumName { get; set; }
         
-        public List<Song> Songs { get; set; } = new();
+        
         
     }
 }

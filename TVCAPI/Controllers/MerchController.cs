@@ -32,32 +32,117 @@ namespace TVCAPI.Controllers
         {
 
 
-            Merch? merch = _repo.GetMerchById(id);
-
-            if (merch == null)
+            try
             {
-                return NotFound();
 
+
+                Merch? merch = _repo.GetMerchById(id);
+
+                if (merch == null)
+                {
+                    return NotFound();
+
+                }
+
+                
+
+                return merch;
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
             }
 
-            return merch;
+        }
+
+        [HttpDelete]
+        [Route("merch/{id}")]
+        public ActionResult<Merch> DeleteMerchById(int id)
+        {
+
+            try
+            {
+
+
+                Merch? merch = _repo.GetMerchById(id);
+
+                if (merch == null)
+                {
+                    return NotFound();
+
+                }
+                bool success = _repo.DeleteMerch(merch);
+
+                if (!success)
+                {
+                    return StatusCode(500);
+                }
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
+
+
         }
 
 
 
 
-            [HttpPost]
+        [HttpPost]
             [Route("merch")]
             public ActionResult<Merch> CreateMerch(Merch merch)
             {
 
-                _repo.CreateMerch(merch);
+            try
+            {
 
 
-
-                //return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
-                return CreatedAtAction(nameof(GetMerchById), new { id = merch.MerchId }, merch);
+                _repo.CreateMerch (merch);
             }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+
+
+
+            //return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
+            return CreatedAtAction(nameof(GetMerchById), new { id = merch.MerchId }, merch);
         }
+
+        [HttpPut]
+        [Route("merch/{id}")]
+        public IActionResult UpdateMerch(int id, Merch merchFromBody)
+        {
+            if (id != merchFromBody.MerchId)
+            {
+                return BadRequest();
+            }
+
+
+
+
+
+            try
+            {
+
+                Merch? updated = _repo.UpdateMerch(id, merchFromBody);
+                if (updated == null)
+                {
+                    return NotFound();
+                }
+
+                return NoContent();
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+
+
+        }
+    }
     }
 

@@ -81,5 +81,35 @@ namespace TVCAPI.Data
         {
             throw new NotImplementedException();
         }
+
+        public Song? GetSongById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteSong(Song song)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CreateSong(Song song)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Song? UpdateSong(int id, Song songFromBody)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteMerch(Merch merch)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Merch? UpdateMerch(int id, Merch merchFromBody)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

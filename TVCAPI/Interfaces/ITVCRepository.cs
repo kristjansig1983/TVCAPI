@@ -18,7 +18,16 @@ namespace TVCAPI.Interfaces
 
         List<Song> GetAllSongs();
 
+        Song? GetSongById(int id);
+
+        bool DeleteSong(Song song);
+        void CreateSong(Song song);
+
+        Song? UpdateSong(int id, Song songFromBody);
+
         List<Merch> GetAllMerch();
         Merch? GetMerchById(int id);
+        bool DeleteMerch(Merch merch);
+        Merch? UpdateMerch(int id, Merch merchFromBody);
     }
 }

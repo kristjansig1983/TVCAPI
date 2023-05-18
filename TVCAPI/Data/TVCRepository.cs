@@ -45,12 +45,13 @@ namespace TVCAPI.Data
 
         public Merch? GetMerchById(int id)
         {
-            throw new NotImplementedException();
+            return _dbContext.Merches.Where(m => m.MerchId == id).FirstOrDefault();
         }
 
         public void CreateMerch(Merch merch)
         {
-            throw new NotImplementedException();
+            _dbContext.Merches.Add(merch);
+            _dbContext.SaveChanges();
         }
 
         public Album? UpdateAlbum(int id, Album albumFromBody)
@@ -86,6 +87,79 @@ namespace TVCAPI.Data
             }
 
             
+        }
+
+        public Song? GetSongById(int id)
+        {
+            return _dbContext.Songs.Where(s => s.SongId == id).FirstOrDefault();
+        }
+
+        public bool DeleteSong(Song song)
+        {
+            try
+            {
+                _dbContext.Songs.Remove(song);
+                _dbContext.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public void CreateSong(Song song)
+        {
+            _dbContext.Songs.Add(song);
+            _dbContext.SaveChanges();
+        }
+
+        public Song? UpdateSong(int id, Song songFromBody)
+        {
+            Song? songFromDB = GetSongById(id);
+
+            if (songFromDB == null)
+            {
+                return null;
+            }
+
+            songFromDB.SongName = songFromBody.SongName;
+            songFromDB.AlbumId = songFromBody.AlbumId;
+            
+            _dbContext.SaveChanges();
+
+            return songFromDB;
+        }
+
+        public bool DeleteMerch(Merch merch)
+        {
+            try
+            {
+                _dbContext.Merches.Remove(merch);
+                _dbContext.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public Merch? UpdateMerch(int id, Merch merchFromBody)
+        {
+            Merch? merchFromDB = GetMerchById(id);
+
+            if (merchFromDB == null)
+            {
+                return null;
+            }
+
+            merchFromDB.MerchName = merchFromBody.MerchName;
+            
+
+            _dbContext.SaveChanges();
+
+            return merchFromDB;
         }
     }
 }

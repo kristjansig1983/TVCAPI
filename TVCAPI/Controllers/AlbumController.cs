@@ -152,6 +152,121 @@ namespace TVCAPI.Controllers
             return _repo.GetAllSongs();
         }
 
+        [HttpGet]
+        [Route("songs/{id}")]
+        public ActionResult<Song> GetSongById(int id)
+        {
+
+            try
+            {
+
+
+                Song? song = _repo.GetSongById(id);
+
+                if (song == null)
+                {
+                    return NotFound();
+
+                }
+
+                // Nota til að fá þær upplýsingar sem þú vilt upp úr gagnagrunninum
+                // AlbumDTO albumDTO = new AlbumDTO() { AlbumName = album.AlbumName, Songs = album.Songs };
+
+                return song;
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
+
+
+        }
+
+        [HttpDelete]
+        [Route("Songs/{id}")]
+        public ActionResult<Album> DeleteSongById(int id)
+        {
+
+            try
+            {
+
+
+                Song? song = _repo.GetSongById(id);
+
+                if (song == null)
+                {
+                    return NotFound();
+
+                }
+                bool success = _repo.DeleteSong(song);
+
+                if (!success)
+                {
+                    return StatusCode(500);
+                }
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
+
+
+        }
+
+        [HttpPost]
+        [Route("songs")]
+        public ActionResult<Album> CreateSong(Song song)
+        {
+            try
+            {
+
+
+                _repo.CreateSong(song);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+
+
+
+            //return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
+            return CreatedAtAction(nameof(GetSongById), new { id = song.SongId }, song);
+        }
+
+        [HttpPut]
+        [Route("songs/{id}")]
+        public IActionResult UpdateSong(int id, Song songFromBody)
+        {
+            if (id != songFromBody.SongId)
+            {
+                return BadRequest();
+            }
+
+
+
+
+
+            try
+            {
+
+                Song? updated = _repo.UpdateSong(id, songFromBody);
+                if (updated == null)
+                {
+                    return NotFound();
+                }
+
+                return NoContent();
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+
+
+        }
+
 
     }
 

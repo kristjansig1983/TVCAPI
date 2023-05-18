@@ -11,8 +11,8 @@ using TVCAPI.Data;
 namespace TVCAPI.Migrations
 {
     [DbContext(typeof(TVCDBContext))]
-    [Migration("20230518135707_Added songs to all albums")]
-    partial class Addedsongstoallalbums
+    [Migration("20230518150713_All finished")]
+    partial class Allfinished
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -113,9 +113,51 @@ namespace TVCAPI.Migrations
                         new
                         {
                             MerchId = 1,
-                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/T-SHIRT-TVC-Monuments-BLACK_600x.jpg?v=1621621536\r\n",
+                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/T-SHIRT-TVC-Monuments-BLACK_600x.jpg?v=1621621536",
                             MerchName = "Monuments Cover Long sleeve",
                             MerchPrice = 3500
+                        },
+                        new
+                        {
+                            MerchId = 2,
+                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/Monolithbaseball_700x.jpg?v=1621620613",
+                            MerchName = "Monoliths T-shirt",
+                            MerchPrice = 3500
+                        },
+                        new
+                        {
+                            MerchId = 3,
+                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/tanktop_700x.jpg?v=1621620627",
+                            MerchName = "Tank Top",
+                            MerchPrice = 3000
+                        },
+                        new
+                        {
+                            MerchId = 4,
+                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/files/Longsleeve-The-Vintage-Caravan-Blizzard_700x.jpg?v=1682686660",
+                            MerchName = "Blizzard Long sleeve",
+                            MerchPrice = 3500
+                        },
+                        new
+                        {
+                            MerchId = 5,
+                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/t-shirt-gateways_700x.jpg?v=1621620596",
+                            MerchName = "Gateways T-shirt",
+                            MerchPrice = 3500
+                        },
+                        new
+                        {
+                            MerchId = 6,
+                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/Hidden-Streams_700x.jpg?v=1621620620",
+                            MerchName = "Hidden Streams T-shirt",
+                            MerchPrice = 3500
+                        },
+                        new
+                        {
+                            MerchId = 7,
+                            MerchImgUrl = "https://cdn.shopify.com/s/files/1/0506/9566/7910/products/1COASTER-TVC-Logo_700x.jpg?v=1621621585",
+                            MerchName = "Coaster",
+                            MerchPrice = 500
                         });
                 });
 
@@ -181,7 +223,7 @@ namespace TVCAPI.Migrations
                         {
                             SongId = 7,
                             AlbumId = 1,
-                            SongName = "Empty Space"
+                            SongName = "Let's Get It on"
                         },
                         new
                         {
