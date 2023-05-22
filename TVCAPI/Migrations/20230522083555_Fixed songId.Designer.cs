@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TVCAPI.Data;
 
@@ -10,9 +11,11 @@ using TVCAPI.Data;
 namespace TVCAPI.Migrations
 {
     [DbContext(typeof(TVCDBContext))]
-    partial class TVCDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230522083555_Fixed songId")]
+    partial class FixedsongId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -77,7 +80,7 @@ namespace TVCAPI.Migrations
                         new
                         {
                             AlbumId = 5,
-                            AlbumCoverUrl = "https://www.spirit-of-metal.com/les%20goupes/T/The%20Vintage%20Caravan/Monuments/Monuments_4110.jpeg",
+                            AlbumCoverUrl = "https://www.spirit-of-metal.com/les%20goupes/T/The%20Vintage%20Caravan/Gateways/Gateways_5124.jpg",
                             AlbumName = "Monuments",
                             AlbumYear = 2021
                         });
@@ -182,313 +185,313 @@ namespace TVCAPI.Migrations
                     b.HasData(
                         new
                         {
-                            SongId = 1,
+                            SongId = 6,
                             AlbumId = 1,
                             SongName = "Need a Woman"
                         },
                         new
                         {
-                            SongId = 2,
+                            SongId = 7,
                             AlbumId = 1,
                             SongName = "Corruption and Fraud"
                         },
                         new
                         {
-                            SongId = 3,
+                            SongId = 8,
                             AlbumId = 1,
                             SongName = "Sun-ray"
                         },
                         new
                         {
-                            SongId = 4,
+                            SongId = 9,
                             AlbumId = 1,
                             SongName = "Psychedelic Mushroom Man"
                         },
                         new
                         {
-                            SongId = 5,
+                            SongId = 10,
                             AlbumId = 1,
                             SongName = "Wild Child"
                         },
                         new
                         {
-                            SongId = 6,
+                            SongId = 11,
                             AlbumId = 1,
                             SongName = "Empty Space"
                         },
                         new
                         {
-                            SongId = 7,
+                            SongId = 12,
                             AlbumId = 1,
                             SongName = "Let's Get It on"
                         },
                         new
                         {
-                            SongId = 8,
+                            SongId = 13,
                             AlbumId = 1,
                             SongName = "Going Home"
                         },
                         new
                         {
-                            SongId = 9,
+                            SongId = 14,
                             AlbumId = 1,
                             SongName = "Black Swan"
                         },
                         new
                         {
-                            SongId = 10,
+                            SongId = 15,
                             AlbumId = 2,
                             SongName = "Know Your Place"
                         },
                         new
                         {
-                            SongId = 11,
+                            SongId = 16,
                             AlbumId = 2,
                             SongName = "Craving"
                         },
                         new
                         {
-                            SongId = 12,
+                            SongId = 17,
                             AlbumId = 2,
                             SongName = "Let Me Be"
                         },
                         new
                         {
-                            SongId = 13,
+                            SongId = 18,
                             AlbumId = 2,
                             SongName = "Do You Remember"
                         },
                         new
                         {
-                            SongId = 14,
+                            SongId = 19,
                             AlbumId = 2,
                             SongName = "M.A.R.S.W.A.T.T."
                         },
                         new
                         {
-                            SongId = 15,
+                            SongId = 20,
                             AlbumId = 2,
                             SongName = "Cocaine Sally"
                         },
                         new
                         {
-                            SongId = 16,
+                            SongId = 21,
                             AlbumId = 2,
                             SongName = "Winterland"
                         },
                         new
                         {
-                            SongId = 17,
+                            SongId = 22,
                             AlbumId = 2,
                             SongName = "Midnight Meditation"
                         },
                         new
                         {
-                            SongId = 18,
+                            SongId = 23,
                             AlbumId = 2,
                             SongName = "The Kings Voyage"
                         },
                         new
                         {
-                            SongId = 19,
+                            SongId = 24,
                             AlbumId = 3,
                             SongName = "Last Day of Light"
                         },
                         new
                         {
-                            SongId = 20,
+                            SongId = 25,
                             AlbumId = 3,
                             SongName = "Monolith"
                         },
                         new
                         {
-                            SongId = 21,
+                            SongId = 26,
                             AlbumId = 3,
                             SongName = "Babylon"
                         },
                         new
                         {
-                            SongId = 22,
+                            SongId = 27,
                             AlbumId = 3,
                             SongName = "Eclipsed"
                         },
                         new
                         {
-                            SongId = 23,
+                            SongId = 28,
                             AlbumId = 3,
                             SongName = "Shaken Beliefs"
                         },
                         new
                         {
-                            SongId = 24,
+                            SongId = 29,
                             AlbumId = 3,
                             SongName = "Crazy Horses"
                         },
                         new
                         {
-                            SongId = 25,
+                            SongId = 30,
                             AlbumId = 3,
                             SongName = "Sandwalker"
                         },
                         new
                         {
-                            SongId = 26,
+                            SongId = 31,
                             AlbumId = 3,
                             SongName = "Innerverse"
                         },
                         new
                         {
-                            SongId = 27,
+                            SongId = 32,
                             AlbumId = 3,
                             SongName = "Carousel"
                         },
                         new
                         {
-                            SongId = 28,
+                            SongId = 33,
                             AlbumId = 3,
                             SongName = "Winter Queen"
                         },
                         new
                         {
-                            SongId = 29,
+                            SongId = 34,
                             AlbumId = 3,
                             SongName = "Say Hello"
                         },
                         new
                         {
-                            SongId = 30,
+                            SongId = 35,
                             AlbumId = 3,
                             SongName = "Five Months"
                         },
                         new
                         {
-                            SongId = 31,
+                            SongId = 36,
                             AlbumId = 4,
                             SongName = "Set Your Sights"
                         },
                         new
                         {
-                            SongId = 32,
+                            SongId = 37,
                             AlbumId = 4,
                             SongName = "The Way"
                         },
                         new
                         {
-                            SongId = 33,
+                            SongId = 38,
                             AlbumId = 4,
                             SongName = "Reflections"
                         },
                         new
                         {
-                            SongId = 34,
+                            SongId = 39,
                             AlbumId = 4,
                             SongName = "On the Run"
                         },
                         new
                         {
-                            SongId = 35,
+                            SongId = 40,
                             AlbumId = 4,
                             SongName = "All This Time"
                         },
                         new
                         {
-                            SongId = 36,
+                            SongId = 41,
                             AlbumId = 4,
                             SongName = "Hidden Streams"
                         },
                         new
                         {
-                            SongId = 37,
+                            SongId = 42,
                             AlbumId = 4,
                             SongName = "Reset"
                         },
                         new
                         {
-                            SongId = 38,
+                            SongId = 43,
                             AlbumId = 4,
                             SongName = "Nebula"
                         },
                         new
                         {
-                            SongId = 39,
+                            SongId = 44,
                             AlbumId = 4,
                             SongName = "Farewell"
                         },
                         new
                         {
-                            SongId = 40,
+                            SongId = 45,
                             AlbumId = 4,
                             SongName = "Tune out"
                         },
                         new
                         {
-                            SongId = 41,
+                            SongId = 46,
                             AlbumId = 4,
                             SongName = "The Chain (Fleetwood Mac Cover)"
                         },
                         new
                         {
-                            SongId = 42,
+                            SongId = 47,
                             AlbumId = 5,
                             SongName = "Whispers"
                         },
                         new
                         {
-                            SongId = 43,
+                            SongId = 48,
                             AlbumId = 5,
                             SongName = "Crystallized"
                         },
                         new
                         {
-                            SongId = 44,
+                            SongId = 49,
                             AlbumId = 5,
                             SongName = "Can’t get you off my mind"
                         },
                         new
                         {
-                            SongId = 45,
+                            SongId = 50,
                             AlbumId = 5,
                             SongName = "Dark times"
                         },
                         new
                         {
-                            SongId = 46,
+                            SongId = 52,
                             AlbumId = 5,
                             SongName = "This one’s for you"
                         },
                         new
                         {
-                            SongId = 47,
+                            SongId = 53,
                             AlbumId = 5,
                             SongName = "Forgotten"
                         },
                         new
                         {
-                            SongId = 48,
+                            SongId = 54,
                             AlbumId = 5,
                             SongName = "Sharp teeth"
                         },
                         new
                         {
-                            SongId = 49,
+                            SongId = 55,
                             AlbumId = 5,
                             SongName = "Hell"
                         },
                         new
                         {
-                            SongId = 50,
+                            SongId = 56,
                             AlbumId = 5,
                             SongName = "Torn in two"
                         },
                         new
                         {
-                            SongId = 51,
+                            SongId = 57,
                             AlbumId = 5,
                             SongName = "Said&Done"
                         },
                         new
                         {
-                            SongId = 52,
+                            SongId = 58,
                             AlbumId = 5,
                             SongName = "Clarity"
                         });

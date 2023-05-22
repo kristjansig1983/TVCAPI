@@ -22,7 +22,7 @@ namespace TVCAPI.Data
             Album a2 = new Album { AlbumId = 2, AlbumName = "Voyage", AlbumYear = 2012, AlbumCoverUrl = "https://www.spirit-of-metal.com/les%20goupes/T/The%20Vintage%20Caravan/Voyage/Voyage.jpg" };
             Album a3 = new Album { AlbumId = 3, AlbumName = "Arrival", AlbumYear = 2015, AlbumCoverUrl = "https://www.spirit-of-metal.com/les%20goupes/T/The%20Vintage%20Caravan/Arrival/Arrival.jpg" };
             Album a4 = new Album { AlbumId = 4, AlbumName = "Gateways", AlbumYear = 2018, AlbumCoverUrl = "https://www.spirit-of-metal.com/les%20goupes/T/The%20Vintage%20Caravan/Gateways/Gateways_5124.jpg" };
-            Album a5 = new Album { AlbumId = 5, AlbumName = "Monuments", AlbumYear = 2021, AlbumCoverUrl = "https://www.spirit-of-metal.com/les%20goupes/T/The%20Vintage%20Caravan/Gateways/Gateways_5124.jpg" };
+            Album a5 = new Album { AlbumId = 5, AlbumName = "Monuments", AlbumYear = 2021, AlbumCoverUrl = "https://www.spirit-of-metal.com/les%20goupes/T/The%20Vintage%20Caravan/Monuments/Monuments_4110.jpeg" };
 
             modelBuilder.Entity<Album>().HasData(a1);
             modelBuilder.Entity<Album>().HasData(a2);
